@@ -36,6 +36,5 @@ int main(){
 			printf("A client is connected\n");
 			printf("IP address: %s\n", clientIP);
 		}
-
-	}	
+	}
 }
