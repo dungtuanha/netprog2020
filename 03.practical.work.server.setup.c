@@ -14,15 +14,15 @@ int main(){
 
 	memset(&saddr, 0, sizeof(saddr));
 	saddr.sin_family = AF_INET;
-	saddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	saddr.sin_port = htonl(port);
+	saddr.sin_addr.s_addr = INADDR_ANY;
+	saddr.sin_port = htons(port);
 
 	if ((bind(serverfd, (struct sockaddr *) &saddr, sizeof(saddr))) < 0) {
 		printf("Error binding!\n");
 		return 0;
 	}
 
-	if (listen(serverfd, 10) < 0){
+		if (listen(serverfd, 10) < 0){
 		printf("Error listening!\n");
 		return 0;
 	}
@@ -37,4 +37,4 @@ int main(){
 			printf("IP address: %s\n", clientIP);
 		}
 	}
-}
+}	
